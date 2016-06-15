@@ -68,10 +68,10 @@
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <button action="button">Yeah, I want more bacon!</button>
+            <button onclick="cloneImg();" action="button">Yeah, I want more bacon!</button>
           </section>
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <img src="http://media.washtimes.com.s3.amazonaws.com/media/image/2015/02/23/bacon.jpg" alt="Bacon" style="width: 100%; height: 100%;">
+          <section id="cimg" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+
           </section>
         </div>
         <footer class="mdl-mega-footer">
@@ -144,6 +144,18 @@
       ga('create', 'UA-XXXXX-X', 'auto');
       ga('send', 'pageview');
     </script>
+     <script>
+      var sourceImage = document.createElement('img'),
+          imgContainer = document.getElementById("cimg");
+          sourceImage.src = "http://media.washtimes.com.s3.amazonaws.com/media/image/2015/02/23/bacon.jpg";
+          sourceImage.style.width = '100%';
+          sourceImage.style.height = '100%';
+          imgContainer.appendChild(sourceImage);
+
+     function cloneImg(){
+          imgContainer.appendChild(sourceImage.cloneNode(true));
+     }
+     </script>
     <!-- Built with love using Web Starter Kit -->
   </body>
 </html>
